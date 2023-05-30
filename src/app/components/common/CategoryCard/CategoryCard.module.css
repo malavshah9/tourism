@@ -1,0 +1,28 @@
+.category{
+    width: 544px;
+    height: 68px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    padding: 0 26px 0 24px;
+    
+}
+
+.category:hover{
+    background: #f0f0f0;
+}
+
+.nameIconContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name{
+    font-weight: 400;
+    font-size: 16px;
+    color: #001A1A;
+}
+

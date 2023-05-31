@@ -5,11 +5,11 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 8px;
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     padding: 9px 24px;
     transition: all 0.2s linear;
+    font-family: IBMPlexMono-Bold, serif;
   }
   .btn:hover{
     background-color: #008080;

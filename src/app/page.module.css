@@ -17,3 +17,23 @@
   align-items: start;
   width: 80%;
 }
+.header{
+  background-image: url('../../public/Image.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 560px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainHeading{
+  font-weight: 700;
+  font-size: 140px;
+  width: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 6.44%, #FFFFFF 95.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
+}

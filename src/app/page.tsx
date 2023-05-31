@@ -8,13 +8,8 @@ const cardArr = [1, 2, 3, 4, 5];
 export default function Home() {
   return (
     <Layout>
-      <div>
-        <Image
-          src="/Image.svg"
-          className={styles.image}
-          width={100}
-          height="560"
-        />
+      <div className={styles.header}>
+        <h1 className={styles.mainHeading}>Welcome to Hawaii</h1>
       </div>
       <div className={styles.cardMain}>
         <div>

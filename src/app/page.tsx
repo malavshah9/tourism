@@ -10,7 +10,7 @@ export default function Home() {
     <Layout>
       <div>
         <Image
-          src="/Image.jpg"
+          src="/Image.svg"
           className={styles.image}
           width={100}
           height="560"

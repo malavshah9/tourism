@@ -4,5 +4,12 @@
     height: var(--footer-height);
     background: var(--theme100);
     width: 100%;
-    color: var(--lightest)
+    color: var(--lightest);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
 }

@@ -6,7 +6,8 @@
     cursor: pointer;
     display: flex;
     padding: 0 26px 0 24px;
-    
+    box-sizing: border-box;
+    transition: all 0.2s linear;
 }
 
 .category:hover{
@@ -19,6 +20,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 
 .name{
     font-weight: 400;

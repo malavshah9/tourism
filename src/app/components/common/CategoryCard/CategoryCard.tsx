@@ -1,4 +1,3 @@
-import Image from "next/Image";
 import React from "react";
 import { RightArrowWithoutBg } from "../../../icons";
 import categoryStyle from "./CategoryCard.module.css";

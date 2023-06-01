@@ -1,8 +1,5 @@
 import "./globals.css";
-
-// import MainFooter from "./components/MainFooter";
-
-// const inter = Inter({ subsets: ["latin"] });
+import { CustomClientQueryProvider } from "./util/QueryClient";
 
 export const metadata = {
   title: "Tourism",
@@ -16,8 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
-      {/* <MainFooter /> */}
+      <CustomClientQueryProvider>
+        <body>{children}</body>
+      </CustomClientQueryProvider>
     </html>
   );
 }

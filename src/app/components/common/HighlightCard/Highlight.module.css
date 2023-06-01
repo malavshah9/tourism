@@ -28,11 +28,12 @@
 }
 
 .title{
-    width: 101px;
-    max-width: 101px;
+    width: 300px;
+    max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
-    word-wrap: nowrap;
+    word-wrap: break-word;
+    white-space: nowrap;
     font-weight: 700;
     font-size: 24px;
     line-height: 20px;

@@ -1,4 +1,3 @@
-import Image from "next/Image";
 import React from "react";
 import { RightArrow } from "../../../icons";
 import highlightStyle from "./Highlight.module.css";
@@ -14,8 +13,8 @@ const HighlightCard = ({
 }) => {
   return (
     <div className={highlightStyle.highlight}>
-      <Image
-        src="/Image.jpg"
+      <img
+        src={imgUrl}
         width={100}
         height={170}
         className={highlightStyle.img}

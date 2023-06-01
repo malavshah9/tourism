@@ -3,15 +3,7 @@ import footerStyle from "./UpperFooter.module.css";
 import { HeadingThin } from "../HeadingThin/HeadingThin";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import TravelGuideCard from "../TravelGuideCard/TravelGuideCard";
-
-const categories = [
-  "Adventure",
-  "Culinary",
-  "Adventure",
-  "Culinary",
-  "Adventure",
-  "Culinary",
-];
+import { useCategories } from "@/app/queries/hooks/useCategories";
 
 const travellers = [
   {
@@ -21,13 +13,18 @@ const travellers = [
 ];
 
 const UpperFooter = () => {
+  const { data, isError, isLoading } = useCategories();
   return (
     <div className={footerStyle.container}>
       <div className={footerStyle.mainSection}>
         <div className={footerStyle.section}>
           <HeadingThin>Categories</HeadingThin>
-          {categories.map((cat) => (
-            <CategoryCard categoryId={cat} categoryName={cat} key={cat} />
+          {data?.map((cat) => (
+            <CategoryCard
+              categoryId={cat.name}
+              categoryName={cat.name}
+              key={cat.name}
+            />
           ))}
         </div>
         <div className={footerStyle.section}>

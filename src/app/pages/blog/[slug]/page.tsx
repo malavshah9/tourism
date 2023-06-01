@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { HeadingThin, Layout } from "./components/common";
-import HighlightCard from "./components/common/HighlightCard/HighlightCard";
-import { useHighlights } from "./queries/hooks/useHighlights";
+import { HeadingThin, Layout } from "../../components/common";
+import HighlightCard from "../../components/common/HighlightCard/HighlightCard";
+import { useHighlights } from "../../queries/hooks/useHighlights";
 
 const cardArr = [1, 2, 3, 4, 5];
 
-export default function Home() {
+export default function Page(props: any) {
+  console.log(props);
   const { data, error, isError, isLoading } = useHighlights();
   return (
     <Layout>

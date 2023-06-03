@@ -6,7 +6,6 @@ import { UpperFooter } from "./UpperFooter/UpperFooter";
 const Layout = ({ children }: any) => {
   return (
     <div>
-      <Header />
       {children}
       <UpperFooter />
       <Footer />

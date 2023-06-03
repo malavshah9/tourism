@@ -1,13 +1,23 @@
 .container{
     width: 560px;
-height: 176px;
-background: #FFFFFF;
-border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 24px;
-box-sizing: border-box;
+    height: 176px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+
+}
+@media only screen and (max-width: 767px) {
+    .container{
+        width: 100%;
+    }  
+    .img{
+        height: 74px;
+        width: 74px;
+    }
 }
 .img{
     border-radius: 50%;

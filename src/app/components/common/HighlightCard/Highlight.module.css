@@ -8,7 +8,12 @@
     cursor: pointer;
     transition: all 0.2s linear;
 }
-
+@media only screen and (max-width: 767px) {
+    .highlight{
+        min-width: 334px;
+        width: 334px;
+    }
+}
 .highlight:hover{
     background: #f0f0f0;
 }

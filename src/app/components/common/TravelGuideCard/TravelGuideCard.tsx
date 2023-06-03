@@ -17,7 +17,7 @@ const TravelGuideCard = ({
           <div className={travelStyle.name}>{name}</div>
           <div className={travelStyle.subtitle}>{subtitle}</div>
         </div>
-        <Button>Contact</Button>
+        <Button variant="outlined">Contact</Button>
       </div>
       <Image
         src="/Image.jpg"

@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { HeadingThin, Layout } from "./components/common";
 import HighlightCard from "./components/common/HighlightCard/HighlightCard";
 import { useHighlights } from "./queries/hooks/useHighlights";
+import { Header } from "./components/common/Header";
 
 const cardArr = [1, 2, 3, 4, 5];
 
@@ -12,8 +13,11 @@ export default function Home() {
   const { data, error, isError, isLoading } = useHighlights();
   return (
     <Layout>
-      <div className={styles.header}>
-        <h1 className={styles.mainHeading}>Welcome to Hawaii</h1>
+      <div className={styles.bg}>
+        <Header />
+        <div className={styles.header}>
+          <h1 className={styles.mainHeading}>Welcome to Hawaii</h1>
+        </div>
       </div>
       <div className={styles.cardMain}>
         <div>

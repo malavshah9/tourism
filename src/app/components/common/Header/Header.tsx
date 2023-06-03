@@ -1,8 +1,8 @@
 import React from "react";
-import headerStyle from "./Header.module.css";
+import { Navbar } from "../Navbar/Navbar";
 
 const Header = () => {
-  return <div>Header</div>;
+  return <Navbar />;
 };
 
 export { Header };

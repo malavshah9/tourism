@@ -1,21 +1,17 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { Drawer } from "antd";
 import { Cross, FooterLogo, Menu } from "@/app/icons";
 import { Button } from "../Button";
 import navbarStyle from "./Navbar.module.css";
+import { COPY_TEXT, ROUTES } from "@/app/util/constant";
 
 export type NavItem = {
   itemText: string;
   itemKey: string;
 };
 
-const Navbar = ({
-  navItems,
-  onNavItemClick,
-}: {
-  navItems: NavItem[];
-  onNavItemClick: (item: NavItem) => void;
-}) => {
+const Navbar = ({ navItems }: { navItems: NavItem[] }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onToggleMenu = () => {
@@ -23,15 +19,16 @@ const Navbar = ({
   };
 
   const getNavItems = () =>
-    navItems?.map((item) => (
-      <li
-        className={navbarStyle.item}
-        key={item.itemKey}
-        onClick={() => onNavItemClick(item)}
-      >
-        {item.itemText}
-      </li>
-    ));
+    navItems?.map((item) => {
+      const effectiveHref = item.itemKey.includes("/")
+        ? item.itemKey
+        : `${ROUTES.HIGHLIGHTS}/${item.itemKey}`;
+      return (
+        <li className={navbarStyle.item} key={item.itemKey}>
+          <Link href={`${effectiveHref}`}>{item.itemText}</Link>
+        </li>
+      );
+    });
 
   return (
     <nav className={navbarStyle.nav}>
@@ -70,7 +67,7 @@ const Navbar = ({
             <Cross />
           </Button>
           <ul className={navbarStyle.drawerItems}>{getNavItems()}</ul>
-          <Button>Book a trip</Button>
+          <Button>{COPY_TEXT.BOOK_TRIP}</Button>
         </div>
       </Drawer>
     </nav>

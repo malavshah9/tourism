@@ -1,3 +1,5 @@
+import { ROUTES } from "@/app/util/constant";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { RightArrow } from "../../../icons";
 import highlightStyle from "./Highlight.module.css";
@@ -11,8 +13,13 @@ const HighlightCard = ({
   subtitle: string;
   imgUrl: string;
 }) => {
+  const router = useRouter();
+  const onCardClick = () => {
+    const href = `${ROUTES.HIGHLIGHTS}/${title}`;
+    router.push(href);
+  };
   return (
-    <div className={highlightStyle.highlight}>
+    <div onClick={onCardClick} className={highlightStyle.highlight}>
       <img
         src={imgUrl}
         width={100}

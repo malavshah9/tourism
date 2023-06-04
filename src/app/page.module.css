@@ -1,5 +1,12 @@
 .bg{
   background-image: url('../../public/Image.jpg');
+  background-position: center;
+  background-size: cover;
+  min-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .image{
   width: 100%;
@@ -30,7 +37,6 @@
 .mainHeading{
   font-weight: 700;
   font-size: 140px;
-  width: 50%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 6.44%, #FFFFFF 95.08%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -41,7 +47,6 @@
 @media only screen and (max-width: 767px) {
   .mainHeading{
       font-size: 64px;
-      width: 70%;
   }
   .cards{
     flex-direction: row;

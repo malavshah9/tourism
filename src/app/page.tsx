@@ -1,31 +1,29 @@
 "use client";
-
-import Image from "next/image";
-import styles from "./page.module.css";
-import { HeadingThin, Layout } from "./components/common";
+import { HeadingThin, Layout, Loader } from "./components/common";
 import HighlightCard from "./components/common/HighlightCard/HighlightCard";
 import { useHighlights } from "./queries/hooks/useHighlights";
 import { Header } from "./components/common/Header";
-
-const cardArr = [1, 2, 3, 4, 5];
+import { COPY_TEXT } from "./util/constant";
+import styles from "./page.module.css";
 
 export default function Home() {
   const { data, error, isError, isLoading } = useHighlights();
+
   return (
     <Layout>
       <div className={styles.bg}>
         <Header />
         <div className={styles.header}>
-          <h1 className={styles.mainHeading}>Welcome to Hawaii</h1>
+          <h1 className={styles.mainHeading}>{COPY_TEXT.MAIN_HEADING}</h1>
         </div>
       </div>
       <div className={styles.cardMain}>
         <div>
-          <HeadingThin>Highlights</HeadingThin>
+          <HeadingThin>{COPY_TEXT.HIGHLIGHTS}</HeadingThin>
         </div>
         <div className={styles.cards}>
           {isLoading ? (
-            <h2>Loading...</h2>
+            <Loader />
           ) : (
             data?.map((item) => (
               <HighlightCard

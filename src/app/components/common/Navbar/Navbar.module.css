@@ -12,7 +12,11 @@
     position: sticky;
     top: 20px;
 }
-
+@media only screen and (min-width: 767px){
+    .toggle{
+        display: none;
+    }
+}
 @media only screen and (max-width: 767px) {
     .nav{
         width: 94%;
@@ -27,6 +31,27 @@
     }
     .btn{
         display: none !important;
+    }
+    .active{
+        position: absolute;
+        height: 100rem;
+        background-color: white;
+        width: 80vw;
+        right:0;
+    }
+    .drawerItems {
+        padding:0;
+    }
+    .item{
+        padding: 0;
+    }
+    .drawerContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .close{
+        align-self: flex-end;
     }
 }
 .menu{
@@ -51,5 +76,4 @@
 }
 .item:hover{
     background: #f0f0f0;
-
 }

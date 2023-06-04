@@ -5,7 +5,7 @@ type ButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & {
-  variant: "outlined" | "contained";
+  variant: "outlined" | "contained" | "icon";
 };
 
 const getClassByVariant: {
@@ -13,6 +13,7 @@ const getClassByVariant: {
 } = {
   contained: buttonStyle.contained,
   outlined: buttonStyle.outlined,
+  icon: buttonStyle.iconButton,
 };
 
 const Button = ({
@@ -22,8 +23,13 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={buttonStyle.btn + " " + getClassByVariant[variant]}
       {...otherProps}
+      className={
+        buttonStyle.btn +
+        " " +
+        getClassByVariant[variant] +
+        (otherProps.className ? ` ${otherProps.className}` : "")
+      }
     >
       {children}
     </button>

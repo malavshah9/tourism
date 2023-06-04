@@ -4,12 +4,34 @@ import { Cross, FooterLogo, Menu } from "@/app/icons";
 import { Button } from "../Button";
 import navbarStyle from "./Navbar.module.css";
 
-const Navbar = () => {
+export type NavItem = {
+  itemText: string;
+  itemKey: string;
+};
+
+const Navbar = ({
+  navItems,
+  onNavItemClick,
+}: {
+  navItems: NavItem[];
+  onNavItemClick: (item: NavItem) => void;
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onToggleMenu = () => {
     setIsMenuOpen((i) => !i);
   };
+
+  const getNavItems = () =>
+    navItems?.map((item) => (
+      <li
+        className={navbarStyle.item}
+        key={item.itemKey}
+        onClick={() => onNavItemClick(item)}
+      >
+        {item.itemText}
+      </li>
+    ));
 
   return (
     <nav className={navbarStyle.nav}>
@@ -26,10 +48,7 @@ const Navbar = () => {
           navbarStyle.menu + " " + (isMenuOpen ? navbarStyle.active : "")
         }
       >
-        <li className={navbarStyle.item}>Home</li>
-        <li className={navbarStyle.item}>Surfing</li>
-        <li className={navbarStyle.item}>Hulo</li>
-        <li className={navbarStyle.item}>Vulcano</li>
+        {getNavItems()}
       </ul>
 
       <Button className={navbarStyle.btn}>Book a trip</Button>
@@ -50,12 +69,7 @@ const Navbar = () => {
           >
             <Cross />
           </Button>
-          <ul className={navbarStyle.drawerItems}>
-            <li className={navbarStyle.item}>Home</li>
-            <li className={navbarStyle.item}>Surfing</li>
-            <li className={navbarStyle.item}>Hulo</li>
-            <li className={navbarStyle.item}>Vulcano</li>
-          </ul>
+          <ul className={navbarStyle.drawerItems}>{getNavItems()}</ul>
           <Button>Book a trip</Button>
         </div>
       </Drawer>

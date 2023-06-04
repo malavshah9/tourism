@@ -12,4 +12,10 @@ export const COPY_TEXT = {
       subtitle: "Guide since 2012",
     },
   ],
+  NAV_ITEM_DEFAULT: [
+    {
+      itemText: "Home",
+      itemKey: "home",
+    },
+  ],
 };

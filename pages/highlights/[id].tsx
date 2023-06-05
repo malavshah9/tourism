@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ACTIVITY_TYPES, COPY_TEXT } from "@/app/util/constant";
-import { HighlightPage } from "./HighlightPage";
+import { HighlightPage } from "../../src/app/components/page-components/HighlightPage";
 import { ActivityType } from "@/app/queries/types/activity";
 import { CustomClientQueryProvider } from "../../src/app/util/QueryClient";
 
